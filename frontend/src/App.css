@@ -1,0 +1,142 @@
+/*
+==========================================================================
+   VocabStore Design Tokens & Global Styles
+==========================================================================
+*/
+
+:root {
+  /* Brand Primary Colors */
+  --primary-purple: #635bff;
+  --primary-purple-hover: #5248f2;
+  --primary-purple-light: #eeedff;
+
+  /* Background Colors */
+  --bg-main: #f5f6fa;
+  --card-bg: #ffffff;
+
+  /* Text Colors */
+  --text-dark: #111827;
+  --text-muted: #6b7280;
+  --text-light: #9ca3af;
+
+  /* German Gender Badges (Tailwind-inspired pastel palette) */
+  --badge-die-bg: #fde8e8;
+  --badge-die-text: #e11d48; /* Feminine - Red */
+
+  --badge-der-bg: #e1effe;
+  --badge-der-text: #2563eb; /* Masculine - Blue */
+
+  --badge-das-bg: #def7ec;
+  --badge-das-text: #059669; /* Neuter - Green */
+
+  /* Status & Alerts */
+  --error-bg: #fef2f2;
+  --error-border: #fecaca;
+  --error-text: #dc2626;
+
+  /* Borders & Radius */
+  --border-color: #e5e7eb;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --radius-lg: 16px;
+  --radius-md: 8px;
+  --radius-pill: 9999px;
+}
+
+/*
+==========================================================================
+   Base Reset
+==========================================================================
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-dark);
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+==========================================================================
+   Page Layout Wrappers
+==========================================================================
+*/
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  width: 100%;
+}
+
+/* Shared Page Typography */
+.page-title {
+  font-size: 36px;
+  font-weight: 800;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+  color: var(--text-dark);
+}
+
+.page-subtitle {
+  color: var(--text-muted);
+  font-size: 15px;
+  margin: 0 0 28px 0;
+  line-height: 1.5;
+}
+
+/* Common Banner / Alerts */
+.error-banner {
+  background-color: var(--error-bg);
+  border: 1px solid var(--error-border);
+  color: var(--error-text);
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  margin-bottom: 24px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.placeholder-view {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  padding: 48px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+/*
+==========================================================================
+   Global Button & Input Resets
+==========================================================================
+*/
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  outline: none;
+}

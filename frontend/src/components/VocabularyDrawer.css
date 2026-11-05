@@ -1,0 +1,150 @@
+/* Full-screen semi-transparent black backdrop */
+.drawer-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.drawer-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* White panel sliding out from the right */
+.drawer-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 400px;
+  max-width: 90vw; /* Prevent overflow on mobile screens */
+  height: 100vh;
+  background-color: var(--card-bg, #ffffff);
+  box-shadow: -4px 0 15px rgba(0, 0, 0, 0.1);
+  z-index: 1001;
+  transform: translateX(100%); /* Hidden off-screen to the right by default */
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer-backdrop.open .drawer-panel {
+  transform: translateX(0); /* Slide into view */
+}
+
+/* Internal layout */
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.drawer-close-btn {
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--text-muted);
+}
+
+.drawer-content {
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.drawer-content > div {
+  width: 100%;
+  text-align: left;
+}
+
+.drawer-image {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+  max-height: 200px;
+}
+
+.drawer-title-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 8px;
+  width: 100%;
+}
+
+.drawer-title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+  color: var(--text-dark);
+  overflow-wrap: break-word;
+  hyphens: auto;
+  min-width: 0;
+}
+
+.drawer-text-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.drawer-panel.gender-masculine {
+  background-color: var(--badge-der-bg);
+}
+
+.drawer-panel.gender-feminine {
+  background-color: var(--badge-die-bg);
+}
+
+.drawer-panel.gender-neuter {
+  background-color: var(--badge-das-bg);
+}
+
+.drawer-panel.gender-masculine .drawer-title {
+  color: var(--badge-der-text);
+}
+
+.drawer-panel.gender-feminine .drawer-title {
+  color: var(--badge-die-text);
+}
+
+.drawer-panel.gender-neuter .drawer-title {
+  color: var(--badge-das-text);
+}
+
+.drawer-gender-badge {
+  font-size: 32px;
+  font-weight: 700;
+  /*padding: 4px 10px;*/
+  /*border-radius: var(--radius-pill);*/
+}
+
+.drawer-badge-der {
+  background: var(--badge-der-bg);
+  color: var(--badge-der-text);
+}
+
+.drawer-badge-die {
+  background: var(--badge-die-bg);
+  color: var(--badge-die-text);
+}
+
+.drawer-badge-das {
+  background: var(--badge-das-bg);
+  color: var(--badge-das-text);
+}

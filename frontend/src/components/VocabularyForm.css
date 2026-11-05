@@ -1,0 +1,398 @@
+.h3 {
+  margin:0 !important;
+}
+
+.h4 {
+  font-size: 12px;
+  margin: 0 !important;
+}
+
+.vocab-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.filter-group > div {
+  width: 100%;
+}
+
+.vocab-form label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark, #1e293b);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.vocab-form input[type="text"],
+.vocab-form input[type="url"] {
+  height: 36px;
+  padding: 0 14px;
+  font-size: 14px;
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: var(--radius-md, 8px);
+  background-color: #ffffff;
+  color: var(--text-dark, #1e293b);
+  box-sizing: border-box;
+}
+
+.vocab-form input[type="text"]:focus,
+.vocab-form input[type="url"]:focus {
+  outline: none;
+  border-color: var(--primary-purple, #6366f1);
+  box-shadow: 0 0 0 2px var(--primary-purple-light, #e0e7ff);
+}
+
+.ai-action-btn {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  background-color: var(--primary-purple-light);
+  color: var(--primary-purple);
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ai-action-btn:hover:not(:disabled) {
+  background-color: #dcdbff;
+}
+
+.ai-action-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.label-with-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.two-col-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: end;
+}
+
+.four-col-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  align-items: end;
+}
+
+.divider-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 8px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.group-divider-section{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 8px;
+  margin-top: 8px;
+}
+
+.group-section{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 8px;
+  margin-top: 8px;
+}
+
+.input-with-action {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.image-preview-wrapper {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.preview-thumbnail {
+  width: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--border-color, #ccc);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.preview-label {
+  font-size: 12px;
+  color: var(--text-muted, #666);
+}
+
+.submit-btn {
+  margin-top: 16px;
+  width: fit-content;
+  flex-shrink: 0;
+  min-height: 44px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input.input-error {
+    border: 1px solid #ff4d4f !important;
+    background-color: #fff1f0 !important;
+}
+
+.select-error .custom-select-trigger {
+    border: 1px solid #ff4d4f !important;
+    background-color: #fff1f0 !important;
+}
+
+/* ---------------------
+       checkbox */
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.checkbox-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  cursor: pointer;
+  font-size: 14px; 
+  color: var(--text-dark, #1e293b);
+}
+
+.checkbox-label::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 3px;
+  transition: all 0.2s;
+  flex-shrink: 0; 
+}
+
+.checkbox-wrapper:hover .checkbox-label::before {
+  border-color: var(--primary-purple, #6366f1);
+}
+
+.checkbox-input:checked + .checkbox-label::before {
+  background-color: var(--primary-purple, #6366f1);
+  border-color: var(--primary-purple, #6366f1);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3E%3Cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3E%3C/svg%3E");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.checkbox-input:focus-visible + .checkbox-label::before {
+  outline: 2px solid var(--primary-purple, #6366f1);
+  outline-offset: 2px;
+}
+
+/* ------------------
+segmented control for is_regular field */
+.segmented-control {
+    display: flex;
+    border: 1px solid var(--border-color, #e2e8f0);
+    border-radius: 12px; /* outer Border radius */
+    padding: 4px;
+    gap: 4px;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+.segment-label {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 16px;
+    cursor: pointer;
+    border-radius: 8px; /* inner Border radius*/
+    transition: all 0.2s ease-in-out;
+    font-size: 14px;
+    color: var(--text-muted, #64748b);
+    margin: 0;
+}
+
+/* hide Radio Button */
+.segment-label input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    margin: 0;
+}
+
+/* not choose just circle */
+.radio-circle {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid #cbd5e1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+
+/* in choossing state */
+.segment-label.selected {
+    background-color: var(--primary-purple-light, #e0e7ff);
+    color: var(--primary-purple, #6366f1);
+    font-weight: 600;
+}
+
+/* in choossing state */
+.segment-label.selected .radio-circle {
+    border-color: var(--primary-purple, #6366f1);
+}
+
+.segment-label.selected .radio-circle::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--primary-purple, #6366f1);
+}
+
+/* -----------------------
+Nested Card Layout */
+.nested-section-header {
+  display: flex;
+  width: 100%;
+  text-align: left;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0px;
+  padding-top: 8px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.nested-section-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-dark, #1e293b);
+  margin: 0 0 8px 0;
+  text-align: left;
+}
+
+.nested-section-subtitle {
+  font-size: 14px;
+  font-weight: 600;
+  /* color: var(--text-muted, #64748b); */
+  color: var(--text-dark, #1e293b);
+  margin: 0px;
+}
+
+.nested-section-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0;
+  gap: 8px;
+}
+
+.nested-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 8px;
+}
+
+.nested-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* .nested-card-title {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-dark, #1e293b);
+  margin: 0;
+} */
+
+.nested-card-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0;
+  gap: 8px;
+}
+
+.card-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--text-muted, #64748b);
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* --- Pill Action Buttons --- */
+.action-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 16px;
+  background-color: var(--primary-purple-light, #e0e7ff);
+  color: var(--primary-purple, #4f46e5);
+  border: none;
+  border-radius: 24px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+  height: 44px; 
+}
+
+.action-pill-btn:hover {
+  background-color: #dcdbff;
+}
+
+.action-pill-btn.outline {
+  background-color: transparent;
+  border: 1px solid var(--primary-purple-light, #e0e7ff);
+}
+
+.action-pill-btn.outline:hover {
+  background-color: var(--primary-purple-light, #e0e7ff);
+}
