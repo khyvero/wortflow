@@ -1,0 +1,23 @@
+# Environment files
+../.env
+
+# Git files
+.git
+.gitignore
+
+# Python cache and virtual environments
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+env/
+
+# Local databases
+*.db
+*.sqlite3
+
+# Docker files
+Dockerfile
+docker-compose.yml
+.dockerignore

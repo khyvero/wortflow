@@ -1,0 +1,128 @@
+.custom-select-container {
+  position: relative;
+  width: 100%;
+}
+
+.custom-select-trigger {
+  width: 100%;
+  height: 36px;
+  padding: 0 14px;
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: var(--radius-md, 8px);
+  font-size: 14px;
+  background-color: #ffffff;
+  color: var(--text-dark, #1e293b);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+}
+
+.custom-select-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  min-width: 100%;
+  white-space: nowrap;
+  max-height: 300px;
+  overflow-y: auto;
+
+  margin-top: 4px;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: var(--radius-md, 8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 0px 0;
+  z-index: 100;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.custom-select-option {
+  padding: 10px 14px;
+  font-size: 14px;
+  color: var(--text-dark, #1e293b);
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-align: left;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.custom-select-option:hover {
+  background-color: var(--primary-purple, #6366f1);
+  color: #ffffff; /* Hover purple bk and white text */
+}
+
+.custom-select-option:hover .check-mark {
+  color: #ffffff;
+}
+
+.check-mark {
+  color: var(--primary-purple, #6366f1);
+  font-weight: bold;
+}
+
+.custom-select-option.selected {
+  background-color: #f3f4f6;
+  font-weight: 500;
+}
+
+.custom-select-option.selected:hover {
+  background-color: var(--primary-purple, #6366f1);
+  color: #ffffff;
+}
+
+.trigger-text.has-value {
+  color: var(--text-dark, #1e293b);
+}
+
+.trigger-text.is-empty {
+  color: #999999;
+}
+
+/* ----multi-select-----*/
+
+.multi-select-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  /* gap between Tag and Input*/
+  margin-bottom: 8px; 
+}
+
+.multi-select-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--primary-purple-light, #e0e7ff);
+  color: var(--primary-purple, #4f46e5);
+  padding: 0px 8px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.multi-select-tag-close {
+  background: none;
+  border: none;
+  color: var(--primary-purple, #4f46e5);
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+}
+
+.multi-select-tag-close:hover {
+  opacity: 0.6;
+}
